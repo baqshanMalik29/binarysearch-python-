@@ -1,0 +1,18 @@
+#Global space
+arr = ["a","b","c","d","e","f","g","h","i","j","k"]
+lb = 0
+ub = len(arr)-1
+def function(ub,lb,val):
+    mid = (ub + lb)//2
+    if lb > ub:
+        return -1
+    if arr[mid] == val:
+        return mid
+    elif arr[mid]>val:
+        return function(ub, mid +1,val)
+    elif arr[mid]< val:
+        return function(mid -1,lb,val)
+
+x = input("Enter item to search for: ")
+print(function(len(arr) - 1, 0, x))
+
